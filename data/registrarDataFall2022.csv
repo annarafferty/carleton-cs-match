@@ -1,0 +1,28 @@
+ID,Carleton Name,Carleton Email,Class Yr,Class Level,Enrollment Status Confidential,Course Name,Title,Term
+11111,A,a@carleton.edu,2023,SR11,F,CS.111,Intro to Computer Science,19/FA
+11111,A,a@carleton.edu,2023,SR11,F,CS.251,Prog Lang Design & Implementn,21/SP
+11111,A,a@carleton.edu,2023,SR11,F,MATH.236,Mathematical Structures,20/SP
+11111,A,a@carleton.edu,2023,SR11,F,CS.201,Data Structures,20/SP
+11111,A,a@carleton.edu,2023,SR11,F,MATH.232,Linear Algebra,19/FA
+11111,A,a@carleton.edu,2023,SR11,F,CS.252,Algorithms,20/FA
+22222,B,b@carleton.edu,2023,SR12,O,CS.111,Intro to Computer Science,19/FA
+22222,B,b@carleton.edu,2023,SR12,O,CS.251,Prog Lang Design & Implementn,21/SP
+22222,B,b@carleton.edu,2023,SR12,O,MATH.236,Mathematical Structures,20/SP
+22222,B,b@carleton.edu,2023,SR12,O,CS.201,Data Structures,20/SP
+22222,B,b@carleton.edu,2023,SR12,O,MATH.232,Linear Algebra,19/FA
+33333,C,c@carleton.edu,2025,SO05,L,CS.111,Intro to Computer Science,19/FA
+33333,C,c@carleton.edu,2025,SO05,L,MATH.236,Mathematical Structures,20/SP
+33333,C,c@carleton.edu,2025,SO05,L,CS.201,Data Structures,20/SP
+33333,C,c@carleton.edu,2025,SO05,L,MATH.232,Linear Algebra,19/FA
+33333,C,c@carleton.edu,2025,SO05,L,CS.252,Algorithms,20/FA
+44444,D,d@carleton.edu,2026,FR01,R,CS.111,Intro to Computer Science,19/FA
+44444,D,d@carleton.edu,2026,FR01,R,CS.251,Prog Lang Design & Implementn,21/SP
+44444,D,d@carleton.edu,2026,FR01,R,MATH.236,Mathematical Structures,20/SP
+44444,D,d@carleton.edu,2026,FR01,R,CS.201,Data Structures,20/SP
+44444,D,d@carleton.edu,2026,FR01,R,MATH.232,Linear Algebra,19/FA
+44444,D,d@carleton.edu,2026,FR01,R,CS.252,Algorithms,20/FA
+55555,E,e@carleton.edu,2026,FR01,X,CS.111,Intro to Computer Science,19/FA
+55555,E,e@carleton.edu,2026,FR01,X,MATH.236,Mathematical Structures,20/SP
+55555,E,e@carleton.edu,2026,FR01,X,CS.201,Data Structures,20/SP
+55555,E,e@carleton.edu,2026,FR01,X,MATH.232,Linear Algebra,19/FA
+55555,E,e@carleton.edu,2026,FR01,X,CS.252,Algorithms,20/FA

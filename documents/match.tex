@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{fullpage,enumitem,hyperref,xcolor}
+\usepackage[bottom]{footmisc}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=blue}
+\urlstyle{same}
+\pagestyle{empty}
+\begin{document}
+\enlargethispage{3\baselineskip}
+\section*{Preregistration System for CS Classes:  \emph{The Match}}
+
+
+This document describes our process, \textbf{The Match}, to allow interested students to preregister for a single 6-credit CS class in a term.  The CS classes for which we offer this preregistration process are all 6-credit courses beyond Data Structures: six CS classes required for the major (202, 208, 251, 252, 254, 257), and all 200- and 300-level electives taught in the CS department.  Note that this is a \emph{preregistration process only,} and the following are unaffected:
+  \begin{itemize}[itemsep=0pc]
+  \item all registration for CS 111, CS 201, and any other 100-level CS courses that we may offer.
+  \item the registration process during the registration period (for seats that are unallocated by The Match).
+  \item the normal waitlist management process after the registration period.
+  \item any circumstance in which a new course, or a new section, is opened after the preregistration period.
+  \end{itemize}
+The spirit of The Match is to provide a streamlined process by which (i) interested students can identify a personal ranked list of CS classes they would like to take, and (ii) the department can match many students to their desired courses (following to the greatest extent possible the students' preferences among CS classes, while prioritizing students by seniority and by need regarding particular requirements for the CS major).
+
+\paragraph{The Match:  the details.}
+\begin{enumerate}
+\item Before the registration period begins, students who wish to enter The Match submit via \href{http://cs.carleton.edu/faculty/dln/match-form.html}{a Google Form} their rank-order preferences (listing as many courses as they want to list).  The deadline for submissions is the Monday before the beginning of Advising Days.
+
+\item Ideally, we would simply match each student to their most-preferred class.  However, in some terms, more students may have a particular CS class as their top choice than that class's capacity.  Thus, we need a mechanism to help us choose among the set of interested students, and a systematic way to specify how these choices will be made.  Algorithmically, we describe these choices by---in addition to students listing their preferences for classes---creating a notion of classes having ``preferences'' for students.  For example, classes will prefer more senior students (seniors over juniors, etc.), and they will prefer students who have taken fewer upper-level CS classes to those who have taken more.  Specifically:
+  \begin{enumerate}
+  \item \emph{Courses in The Match required for the CS major} (202, 208, 251, 252, 254, 257) prefer students by descending seniority (seniors over juniors over sophomores over first years), breaking ties randomly.
+  \item \emph{Courses in The Match not specifically required for the CS major} (all 200- and 300-level electives taught in the CS department) also prefer students by descending seniority, with a tie-breaking policy designed to help more students take electives (rather than fewer students taking multiple electives).  Among students in the same graduating class, an elective prefers students who have satisfied \emph{more} of the required CS major courses, breaking ties by preferring students who have taken \emph{fewer} CS electives.  Any remaining ties are broken randomly.
+  \end{enumerate}
+\item Once we have collected students' preferences and computed classes' ``preferences,'' we will run the \href{https://www.jstor.org/stable/2312726}{Gale--Shapley Proposal Algorithm} to compute a matching of students to classes.  Each student will be allocated at most one class; each class will be allocated a number of students that does not exceed the class's capacity; and we will run the matching algorithm so that it is set to be ``student optimal'' (i.e., it selects the matching that adheres as closely as possible to the \emph{students'} preferences, rather than those of the classes).  Students will be informed of their match prior to Advising Days and given permission via the Registrar's Office to add that one class during the normal registration period.  Students may register for any unmatched seats in CS courses numbered 202 and above, and all seats in CS 111 and CS 201, in the normal way during the registration period.
+  
+\item Exceptions will be handled on a case-by-case basis.  Students may petition the department to allocate them two courses via The Match, or to request an exception to their priority, by emailing \href{mailto:cs-preregistration-petitions.group@carleton.edu}{cs-preregistration-petitions.group@carleton.edu}; such petitions will generally be approved only for those students who need to take multiple CS courses to stay on track to graduate with a CS major in 12 terms.  Other requested exceptions will be considered on their own case-by-case merits.
+
+\end{enumerate}
+
+  
+\newpage\enlargethispage{2\baselineskip}
+
+\section*{Frequently Asked Questions}
+
+\def\qitem{\normalsize \stepcounter{enumi}\item[Question \#\arabic{enumi}.]}
+\def\aitem{\vspace*{-\itemsep}\small\item[\it Answer.]}
+\setcounter{enumi}{0}
+%\addtolength{\itemsep}{1pc}
+
+\begin{description}[itemsep=0.9\baselineskip]%[itemsep=1.021\baselineskip]
+\qitem Why are you doing this?
+\aitem In short, because a relatively small proportion of students were each taking a relatively large number of computer science classes.  We were unhappy about this situation in two distinct ways:  first, because a student schedule consisting of CS+CS+CS (or CS+CS+STEM) courses is usually quite far from the liberal-arts spirit of Carleton, and, second, because those students were taking so many seats in CS classes that many students who wanted to take a CS class were unable to.  Our guiding principles are:
+\begin{itemize}[itemsep=-0.05cm]
+\item[(1)] to maximize the number of \emph{distinct} students who can take a computer science course in a term.
+\item[(2)] to ensure that students who wish to major in CS can get seats in the courses they need to graduate.
+\item[(3)] to help students register for the CS courses that they most want to take, to the extent possible.
+\end{itemize}
+With current patterns of student interest, the existing registration system does not match these principles.  For example, at the end of Spring 2019 registration (before waitlists were handled), we had 12 students enrolled in three CS classes and 75 students enrolled in two CS classes; meanwhile, 29 non-first-year students and 11 first-year students were enrolled in no CS classes but on 1+ waitlist for CS courses numbered 202 and above.
+% \begin{itemize}[itemsep=-0.05cm]
+% \item 12 students enrolled in three CS classes (of whom 3 were on a total of 4 other CS waitlists!)
+% \item 75 students enrolled in two CS classes (of whom 19 were on a total of 26 other CS waitlists)
+% \item 29 non-first-year students (2 seniors, 6 juniors, 21 sophomores) and 11 first-years were enrolled in no CS classes but on 1+ waitlist.  (Six of the 21 sophomores were on 3+ waitlists; one was on 6!)
+% \end{itemize}
+%(Note that these enrollment/waitlist counts refer only to CS classes that are in The Match.)
+
+
+\qitem Did you entirely make up this matching system?
+\aitem Not at all.  The basic algorithm that we use is the \emph{Gale--Shapley stable matching algorithm,} which is used in matching medical students to hospitals for their residencies (the \href{http://www.nrmp.org/}{National Residency Matching Program [NRMP]}) and in \href{https://www.nytimes.com/2014/12/07/nyregion/how-game-theory-helped-improve-new-york-city-high-school-application-process.html}{matching students to public high schools in New York City}.  We encourage any students interested in this algorithm to put CS 252 \emph{Algorithms} on their preference list of courses; stable matching and the Gale--Shapley Proposal Algorithm are taught during most CS 252 offerings.
+
+\qitem I'm trying to figure out what preferences to submit to The Match.  What should I do?
+\aitem You should figure out the courses that you would like to take, rank them in your order of preference, and truthfully report them.  It is \href{https://www.tandfonline.com/doi/abs/10.1080/00029890.1981.11995301}{provably optimal for you to truthfully report your preferences} under the student-optimal version of Gale--Shapley; there is no advantage to trying to act strategically.
+
+\qitem What about comps and the senior seminar?
+\aitem CS 399 and CS 400 are not part of The Match.  Participation in The Match and enrollment in CS 399 or CS 400 have no effect on each other.
+
+\qitem Does The Match mean I will never be able to take multiple CS classes in the same term?
+\aitem No, it does not.  First, if it's relevant: CS 201 is not in The Match, so you can participate in The Match and also register for CS 201 as usual.  Second, we anticipate some seats in Match classes will remain available after The Match.  For example, in Spring 2019 registration, we had 302 total enrollments in the nine CS classes that are part of The Match, by 205 distinct students.  There were also 165 waitlist entries by 136 distinct students, of whom 45 students were not enrolled in any CS course.  Thus, even if The Match were able to match every interested student with a class (which is not always possible depending on the patterns of interest in particular classes), there would have been $302 - 205 - 45 = 52$ seats available for a student to take a second CS class.
+
+\qitem But I \emph{really} want to \underline{~~~~~~} (guarantee that I will take multiple CS classes this term / take one particular CS class before my summer internship / etc.).  Why can't you guarantee I can do that?
+\aitem We appreciate your interest and the reasons you want to \underline{~~~~~~}.  But The Match is designed to balance needs and desires of \emph{many} students; we must respect others' interests / internships / etc., too.
+
+\qitem I discovered CS late, and I want to major in it---but I'm behind, and I can't graduate without doubling up on CS classes.  What do I do?
+\aitem This is precisely the reason that we have an exception policy that allows students to petition to match into a second CS class.  Please consult with your advisor (or, if you're not a declared major, any CS faculty member).
+
+% \qitem I am part of FOCUS and I am very interested in CS 202 (or above).  What should I do?
+% \aitem Contact the department or your FOCUS mentor (or both) to discuss options.
+\end{description}
+
+\end{document}
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

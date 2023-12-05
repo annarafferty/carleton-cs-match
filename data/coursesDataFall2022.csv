@@ -1,0 +1,8 @@
+Course Name,Capacity,Course Type,Prerequisites,Students with Prereq Waiver
+CS.202,1,core,CS.111,
+CS.251,1,core,CS.201,
+CS.252,1,core,"CS.201,CS.202",
+CS.254,1,core,"CS.201,CS.202",
+CS.257,1,core,CS.201,
+CS.311,1,elective,CS.201,
+CS.361,1,elective,CS.201,
